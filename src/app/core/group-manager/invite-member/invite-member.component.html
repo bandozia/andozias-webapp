@@ -1,0 +1,10 @@
+<h2>convidar</h2>
+<p>Convide alguem para ingressar no seu grupo.</p>
+<form [formGroup]="formGroup" (submit)="sendInvite()">
+    <mat-form-field fxFill>
+        <mat-label>e-mail do convidado</mat-label>
+        <input matInput formControlName="email" type="email">
+    </mat-form-field>
+
+    <app-spiner-buttom [waitingResult]="waitingResult" [formGroup]="formGroup">convidar</app-spiner-buttom>
+</form>

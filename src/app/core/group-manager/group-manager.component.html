@@ -1,0 +1,23 @@
+<div class="inner-container">    
+    <div fxLayout="row" fxLayoutGap="2rem" *ngIf="user$ |async as user">
+
+        <div fxFlex="50">
+            <div *ngIf="user.Group; else hasNoGroup">
+                <h2>{{user.Group.Name}}  <button mat-button>sair do grupo</button></h2>
+                mostrar membros do grupo               
+            </div>
+
+            <ng-template #hasNoGroup>
+                <h2>criar grupo</h2>
+                <p>Voce ainda nao possui nem esta inscrito em nenhum grupo. Grupos sao o ponto de partida para a utilizacao deste sistema.</p>
+                <app-create-group></app-create-group>
+            </ng-template>
+        </div>
+
+        <div fxFlex="50">
+            <h2>convites</h2>
+            <app-invite-member *ngIf="user.Group && checkManagerRole(user.Roles)"></app-invite-member>
+        </div>
+
+    </div>
+</div>

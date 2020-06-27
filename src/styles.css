@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Rajdhani', Roboto, sans-serif;}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Dosis', sans-serif;    
+}
+
+h1{
+    color: rgb(52, 64, 87);
+    font-weight: 300;
+    font-size: 2.5rem;    
+}
+
+h2 {
+    color: rgb(52, 64, 87);
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #2b3236;
+}
+
+.round-container {
+    border-radius: 26px;
+    padding: 2rem;
+}
+
+.inner-container {
+    margin-top: 1rem;
+}

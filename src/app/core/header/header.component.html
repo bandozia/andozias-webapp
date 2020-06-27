@@ -1,0 +1,14 @@
+<header fxLayout="row" *ngIf="user$ |async as user">    
+    <div fxFlex="80" fxLayoutAlign="start center">
+        <div *ngIf="user.Group; else nogroup">
+            {{user.Group.Name}}
+        </div>
+        <ng-template #nogroup>
+            Crie ou ingresse em um grupo para iniciar.
+        </ng-template>
+    </div>
+    <div fxFlex fxLayout="column" fxLayoutAlign="center end">
+        <app-user-menu [userName]="user.Name"></app-user-menu>
+    </div>
+</header>
+

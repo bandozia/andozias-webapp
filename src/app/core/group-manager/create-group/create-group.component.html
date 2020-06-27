@@ -1,0 +1,11 @@
+
+<form [formGroup]="formGroup" (submit)="createGroup()">
+    <mat-form-field fxFill>
+        <mat-label>Nome do grupo</mat-label>
+        <input matInput formControlName="name" type="text">
+    </mat-form-field>
+    <div fxLayout="row" fxLayoutAlign="end center">
+        <mat-spinner diameter="30" *ngIf="waitingResult"></mat-spinner>
+        <button *ngIf="!waitingResult" [disabled]="formGroup.invalid || formGroup.pending" type="submit" mat-stroked-button color="primary">criar</button>
+    </div>
+</form>

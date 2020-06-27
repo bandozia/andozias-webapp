@@ -1,0 +1,7 @@
+<div fxLayout="row" class="top-div">    
+    <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon aria-hidden="false">account_box</mat-icon>{{userName}}</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()"><mat-icon aria-hidden="false">exit_to_app</mat-icon>sair</button>        
+    </mat-menu>
+</div>

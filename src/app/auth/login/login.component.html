@@ -1,0 +1,22 @@
+<div class="round-container mat-elevation-z5" @fadeFromLeft>
+    <h1>login</h1>
+    <form [formGroup]="formGroup" (submit)="login()">
+        <mat-form-field appearance="outline" fxFill>
+            <mat-label>e-mail</mat-label>
+            <input matInput formControlName="email">
+            <mat-icon matSuffix color="primary">account_box</mat-icon>
+            <mat-error>preencha seu e-mail</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFill>
+            <mat-label>senha</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-icon matSuffix color="primary">lock</mat-icon>
+            <mat-error>sabe sua senha?</mat-error>
+        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <mat-spinner diameter="30" *ngIf="waitingResult"></mat-spinner>
+            <button *ngIf="!waitingResult" [disabled]="formGroup.invalid" type="submit" mat-stroked-button
+                color="primary">entrar</button>
+        </div>
+    </form>
+</div>
